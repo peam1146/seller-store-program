@@ -27,6 +27,12 @@ int get_index_from_key(json_value *root, char *key)
     return -1;
 }
 
+// print order
+void print_order(char *name, int price_per_item, int quantity)
+{
+    printf("    Name: %s Quantity: %d Price: %d\n", name, quantity, quantity * price_per_item);
+}
+
 // print menu
 void print_menu()
 {
@@ -106,7 +112,7 @@ void main()
     printf("Your order: \n");
     for (int i = 0; i < bucket_count; i++)
     {
-        printf("    Name: %s Quantity: %d\n", products[buckets[i].product_id - 1].name, buckets[i].quantity);
+        print_order(products[buckets[i].product_id - 1].name, products[buckets[i].product_id - 1].price, buckets[i].quantity);
     }
     while (running == 1)
     {
@@ -146,7 +152,7 @@ void main()
             printf("Your orders : \n");
             for (int i = 0; i < bucket_count; i++)
             {
-                printf("    Name: %s Quantity: %d\n", products[buckets[i].product_id - 1].name, buckets[i].quantity);
+                print_order(products[buckets[i].product_id - 1].name, products[buckets[i].product_id - 1].price, buckets[i].quantity);
             }
             break;
         case 2:
@@ -170,7 +176,7 @@ void main()
             printf("Your orders : \n");
             for (int i = 0; i < bucket_count; i++)
             {
-                printf("    Name: %s Quantity: %d\n", products[buckets[i].product_id - 1].name, buckets[i].quantity);
+                print_order(products[buckets[i].product_id - 1].name, products[buckets[i].product_id - 1].price, buckets[i].quantity);
             }
             break;
         case 3:
@@ -180,7 +186,7 @@ void main()
             printf("Your orders : \n");
             for (int i = 0; i < bucket_count; i++)
             {
-                printf("    Name: %s Quantity: %d\n", products[buckets[i].product_id - 1].name, buckets[i].quantity);
+                print_order(products[buckets[i].product_id - 1].name, products[buckets[i].product_id - 1].price, buckets[i].quantity);
             }
             // total price
             printf("\n");
